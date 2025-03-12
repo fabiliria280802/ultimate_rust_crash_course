@@ -1,7 +1,8 @@
 [package]
 name = "g_collections_enums"
-version = "0.1.0"
-edition = "2021"
+version = "2.3.4"
+authors = ["Fabiana Liria <fabiliria@gmail.com>"]
+edition = "2024"
 
 [dependencies]
 rand = "0.8.5"

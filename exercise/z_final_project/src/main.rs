@@ -25,6 +25,10 @@
 //
 //     let positive_number: u32 = some_string.parse().expect("Failed to parse a number");
 
+use std::env;
+use image;
+use num_complex::Complex;
+
 fn main() {
     // 1. First, you need to implement some basic command-line argument handling
     // so you can make your program do different things.  Here's a little bit
@@ -47,12 +51,21 @@ fn main() {
             let outfile = args.remove(0);
             // **OPTION**
             // Improve the blur implementation -- see the blur() function below
-            blur(infile, outfile);
-        }
+            let blur_amount: f32 = args.remove(0).parse().expect("El valor de blur debe ser un número.");
+            blur(infile, outfile, blur_amount);
+        },
 
         // **OPTION**
         // Brighten -- see the brighten() function below
-
+        "brighten" => {
+            if args.len() != 3 {
+                print_usage_and_exit();
+            }
+            let infile = args.remove(0);
+            let outfile = args.remove(0);
+            let brightness: i32 = args.remove(0).parse().expect("El valor de brillo debe ser un entero.");
+            brighten(infile, outfile, brightness);
+        },
         // **OPTION**
         // Crop -- see the crop() function below
 

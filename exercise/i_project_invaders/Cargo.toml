@@ -1,0 +1,10 @@
+[package]
+name = "i_project_invaders"
+version = "2.3.4"
+authors = ["Fabiana Liria <fabiliria@gmail.com>"]
+edition = "2024"
+
+[dependencies]
+crossterm = "0.28.1"
+rusty_audio = "1.2"
+rusty_time = "1.1.0"
